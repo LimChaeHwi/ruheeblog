@@ -22,26 +22,30 @@ public class SearchRestController {
 
     @GetMapping("/search")
     public ResponseEntity search(QueryDto queryDto) {
-        Page<Document> result;
+        Page<?> result;
         try {
             result = this.searchService.search(queryDto);
+            // 검색어 카운트
             this.topsService.save(queryDto.getQuery());
         } catch (RestClientException e) {
             e.printStackTrace();
+            // 네이버 블로그 API
             this.searchService = new NaverSearchService();
             result = this.searchService.search(queryDto);
         }
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
+    /**
+     * 강제 예외 처리 (카카오 블로그 API 사용불가 상태 가정)
+     * @param queryDto
+     * @return
+     */
     @GetMapping("/searchEx")
     public ResponseEntity searchEx(QueryDto queryDto) {
-        Page<Document> result;
+        Page<?> result;
         try {
-            log.info("searchEx 테스트");
-            log.info("{}",this.searchService);
             this.searchService = new KakaoSearchServiceEx();
-            log.info("{}",this.searchService);
             result = this.searchService.search(queryDto);
             this.topsService.save(queryDto.getQuery());
         } catch (RestClientException e) {

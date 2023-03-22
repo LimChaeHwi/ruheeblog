@@ -2,7 +2,7 @@ package api.chaehwi.ruheeblog.search;
 
 enum ApiType {
     KAKAO_BLOG("https://dapi.kakao.com/v2/search/blog", "d94570c4026ce8515792257e81cbf52a", ""),
-    NAVER_BLOG("https://openapi.naver.com/v1/search/blog.json", "raG9ybevh5zmjBmEejpL", "2zODoDJppx");
+    NAVER_BLOG("https://openapi.naver.com/v1/search/blog", "raG9ybevh5zmjBmEejpL", "fBr09z4Woz");
     final private String url;
     final private String key1;
     final private String key2;

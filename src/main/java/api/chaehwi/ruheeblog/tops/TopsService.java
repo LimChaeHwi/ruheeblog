@@ -24,10 +24,11 @@ public class TopsService {
                     .searchWord(searchWord)
                     .searchCount(1)
                     .build();
+            tops = topsRepository.save(tops);
         } else {
-            tops.setSearchCount(tops.getSearchCount() + 1);
+            topsRepository.updateSearchCount(searchWord);
         }
-        return topsRepository.save(tops);
+        return tops;
     }
 
     public Tops findById(String searchWord) {

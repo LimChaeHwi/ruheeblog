@@ -70,7 +70,7 @@ public class RestControllerTest {
 
     @Test
     @Order(3)
-    @DisplayName("카카오 API 예외 테스트 (query=스프링부트,sort=recency,page=1,size=10) ")
+    @DisplayName("카카오 API 예외 테스트 (query=리뷰) ")
     public void searchApiExceptionTest() {
         String url = "/searchEx";
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();

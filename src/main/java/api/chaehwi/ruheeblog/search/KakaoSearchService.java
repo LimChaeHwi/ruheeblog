@@ -3,6 +3,7 @@ package api.chaehwi.ruheeblog.search;
 import api.chaehwi.ruheeblog.utils.SearchUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -18,9 +19,14 @@ import java.util.List;
 @Slf4j
 public class KakaoSearchService implements SearchService {
 
+    private final RestTemplate restTemplate;
+
+    public KakaoSearchService() {
+        this.restTemplate = new RestTemplate();
+    }
+
     @Override
     public Page<Document> search(QueryDto queryDto) {
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "KakaoAK " + ApiType.KAKAO_BLOG.getKey1());
         HttpEntity<String> request = new HttpEntity<String>(headers);

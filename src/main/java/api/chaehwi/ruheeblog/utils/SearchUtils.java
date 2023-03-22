@@ -11,7 +11,7 @@ import java.util.List;
 public class SearchUtils {
     public static Page<Document> changePagination(List<Document> blogList, int page, int size) {
         if (blogList == null) {
-            blogList = new ArrayList<Document>();
+            blogList = new ArrayList<>();
         }
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Document> documentPage = new PageImpl<>(blogList, pageRequest, blogList.size());

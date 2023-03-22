@@ -22,4 +22,4 @@ API 명세서
 }
 
 JAR 링크
-https://drive.google.com/file/d/1TDSpls6IduAHvlJivX2Wiry4qbOGfdV1/view?usp=share_link
+https://drive.google.com/file/d/1qOnLtMkVhJeSKA9BEyzdYeemZiTdyfGD/view?usp=share_link

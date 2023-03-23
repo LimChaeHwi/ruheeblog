@@ -12,7 +12,10 @@ API 명세서
     size=10
 }
 
-2.블로그 검색 API (카카오 API 강제로 사용불가 상황 재현)
+2.인기검색어
+- url : /tops/ten
+
+3.블로그 검색 API (카카오 API 강제로 사용불가 상황 재현)
 - url : /searchEx
 - param : {
     query:리뷰,
